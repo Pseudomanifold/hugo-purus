@@ -1,0 +1,62 @@
+html
+{
+  overflow-y: scroll;
+}
+
+body
+{
+  font-family: 'Crimson Text', serif;
+  font-size: 1.25em;
+  max-width: 960px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+img
+{
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5
+{
+  font-variant: small-caps;
+}
+
+h1.title
+{
+  margin-bottom: 0;
+}
+
+h2.tags, h2.feeds
+{
+  margin-top: 0;
+  line-height: 1em;
+  font-variant: None;
+}
+
+pre, pre.chroma
+{
+  padding: 1em;
+  background-color: #F5F5F5;
+  border: 1px solid #E5E5E5;
+  overflow: auto;
+}
+
+header
+{
+  margin-bottom: 1em;
+  border-bottom: 1px solid;
+  padding-bottom: 0.5em;
+}
+
+footer
+{
+  border-top: 1px solid black;
+  margin-top: 1em;
+  padding-top: 0.5em;
+}

@@ -1,0 +1,27 @@
+{{ partial "header.html" . }}
+
+  <main>
+    <div>
+      {{ .Content }}
+    </div>
+
+    {{ $type := .Type }}
+
+    <div>
+      <ul>
+        {{ range $key, $value := .Data.Terms.Alphabetical }}
+          {{ $name := .Name }}
+          {{ $count := .Count }}
+          {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+            <li>
+              <article>
+                <a href="{{.Permalink}}">{{$name | lower}}</a> ({{ $count }})
+              </article>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </main>
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,36 @@
+{{ partial "header.html" . }}
+
+  <main>
+    <article>
+      <h1 class="title">{{ .Title }}</h1>
+
+      {{ if eq .Type "blog" }}
+        <h2 class="feeds">
+          <a href="{{.RSSLink}}"><img src="/images/feed-icon.png" alt="RSS feed" /></a>
+        </h2>
+      {{ end }}
+
+      <div>
+        {{ .Content }}
+      </div>
+    </article>
+
+    {{ if eq .Type "tags" }}
+      <div>
+        <p>
+          It looks like you are trying to navigate this website using tags. Please enjoy this list of all pages
+          tagged &ldquo;{{ .Title | lower }}&rdquo;:
+        </p>
+      </div>
+    {{ end }}
+
+    <div>
+      {{ range .Pages }}
+        <article>
+          <a href="{{.Permalink}}">{{.Title | markdownify}}</a> (published on  {{.Date.Format "Monday, January 2, 2006"}})
+        </article>
+      {{ end }}
+    </div>
+  </main>
+
+{{ partial "footer.html" . }}
