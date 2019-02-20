@@ -60,3 +60,8 @@ footer
   margin-top: 1em;
   padding-top: 0.5em;
 }
+
+#tags
+{
+  margin-bottom: 10px;
+}
