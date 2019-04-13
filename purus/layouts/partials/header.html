@@ -2,22 +2,24 @@
 
 <html lang="{{ .Site.LanguageCode | default "en-us" }}">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{ .Title | markdownify }}</title>
-	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
-	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title | markdownify }}</title>
+  {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 
   {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
 
   {{ with .Site.Params.google_site_verification }}<meta name="google-site-verification" content="{{ . }}">{{ end }}
 
-	<link rel="stylesheet" href="{{ relURL "css/style.css" }}">
-	<link rel="stylesheet" href="{{ relURL "css/syntax.css" }}">
+  <link rel="stylesheet" href="{{ relURL "css/style.css" }}">
+  <link rel="stylesheet" href="{{ relURL "css/syntax.css" }}">
+  <link rel="stylesheet" href="{{ relURL "css/fontawesome-all.css" }}">
+
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
 
-	{{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
-	{{ .Hugo.Generator }}
+  {{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
+  {{ .Hugo.Generator }}
 </head>
 
 <body>
