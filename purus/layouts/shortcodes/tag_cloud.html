@@ -1,3 +1,8 @@
+<!--
+  This code was originally created by Artem Sidorenko in a post on his
+  blog: https://www.sidorenko.io/post/2017/07/nice-tagcloud-with-hugo
+-->
+
 {{ if not (eq (len $.Site.Taxonomies.tags) 0) }}
   {{ $fontUnit := "rem" }}
   {{ $largestFontSize := 2.0 }}
