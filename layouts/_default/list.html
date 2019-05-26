@@ -6,7 +6,10 @@
 
       {{ if eq .Type "blog" }}
         <h2 class="feeds">
-          <a href="{{.RSSLink}}"><img src="/images/feed-icon.png" alt="RSS feed" /></a>
+					{{ with .OutputFormats.Get "rss" -}}
+							{{ printf `<a href="%s">` .Permalink | safeHTML }}
+							<img src="/images/feed-icon.png" alt="RSS feed" /></a>
+					{{ end -}}
         </h2>
       {{ end }}
 
