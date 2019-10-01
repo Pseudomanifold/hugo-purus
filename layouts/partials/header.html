@@ -12,6 +12,17 @@
 
   {{ with .Site.Params.google_site_verification }}<meta name="google-site-verification" content="{{ . }}">{{ end }}
 
+  {{ if .Site.Params.twitterMeta }}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ .Title | markdownify }}">
+    <meta name="twitter:url" content="{{ .Permalink }}">
+
+    {{ with .Params.Description }}<meta name="twitter:description" content="{{ . }}">{{ end }}
+    {{ with .Params.Image }}<meta name="twitter:image" content="{{ . | absURL }}">{{ end }}
+    {{ with .Params.ImageAlt }}<meta name="twitter:image:alt" content="{{ . }}">{{ end }}
+    {{ with .Site.Params.twitterAccount }}<meta name="twitter:creator" content="{{ . }}">{{ end }}
+  {{ end }}
+
   <link rel="stylesheet" href="{{ relURL "css/style.css" }}">
   <link rel="stylesheet" href="{{ relURL "css/syntax.css" }}">
   <link rel="stylesheet" href="{{ relURL "css/fontawesome-all.css" }}">
