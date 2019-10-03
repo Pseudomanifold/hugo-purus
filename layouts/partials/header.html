@@ -10,10 +10,6 @@
 
   {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
 
-  {{ with .OutputFormats.Get "amp" }}
-    <link rel="amphtml" href="{{ .Permalink }}">
-	{{ end }}
-
   {{ with .Site.Params.google_site_verification }}
     <meta name="google-site-verification" content="{{ . }}">
   {{ end }}
