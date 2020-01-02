@@ -34,7 +34,7 @@
 
   {{ with .OutputFormats.Get "rss" -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-	{{ end -}}
+  {{ end -}}
 
   {{ hugo.Generator }}
 
@@ -44,9 +44,11 @@
 <body>
   <header>
     <nav>
-      <a href="{{ relURL "/" }}">Home</a>
-      {{ range .Site.Menus.main }}
-        &bull;
+      {{ range $i, $e := .Site.Menus.main }}
+        {{ if $i }}&bull;{{ end }}
+        {{ with .Pre }}
+          <span>{{ . }}</span>
+        {{ end }}
         <a href="{{ .URL | relURL }}">{{ .Name }}</a>
       {{ end }}
     </nav>
