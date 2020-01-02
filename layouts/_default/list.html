@@ -5,12 +5,12 @@
       <h1 class="title">{{ .Title }}</h1>
 
       {{ if eq .Type "blog" }}
-        <h2 class="feeds">
-					{{ with .OutputFormats.Get "rss" -}}
-							{{ printf `<a href="%s">` .Permalink | safeHTML }}
-							<img src="/images/feed-icon.png" alt="RSS feed" /></a>
-					{{ end -}}
-        </h2>
+      <div>
+        {{ with .OutputFormats.Get "rss" -}}
+            {{ printf `<a href="%s" aria-label="RSS">` .Permalink | safeHTML }}
+            <i class="fa fa-rss-square fa-lg" style="color:black"></i></a>
+        {{ end -}}
+      </div>
       {{ end }}
 
       <div>
