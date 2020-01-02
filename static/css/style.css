@@ -16,6 +16,11 @@ body
   padding-right: 10px;
 }
 
+nav
+{
+  font-size: 1.25em;
+}
+
 img
 {
   max-width: 100%;
