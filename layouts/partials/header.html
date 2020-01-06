@@ -25,6 +25,11 @@
     {{ with .Site.Params.twitterAccount }}<meta name="twitter:creator" content="{{ . }}">{{ end }}
   {{ end }}
 
+  <link rel="preload" as="style" href="{{ relURL "css/style.css" }}">
+  <link rel="preload" as="style" href="{{ relURL "css/syntax.css" }}">
+  <link rel="preload" as="style" href="{{ relURL "css/fontawesome.min.css" }}">
+  <link rel="preload" as="style" href="{{ relURL "css/academicons.min.css" }}">
+
   <link rel="stylesheet" href="{{ relURL "css/style.css" }}">
   <link rel="stylesheet" href="{{ relURL "css/syntax.css" }}">
   <link rel="stylesheet" href="{{ relURL "css/fontawesome.min.css" }}">
