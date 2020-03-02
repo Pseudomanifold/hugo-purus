@@ -8,7 +8,7 @@
       <div>
         {{ with .OutputFormats.Get "rss" -}}
             {{ printf `<a href="%s" aria-label="RSS">` .Permalink | safeHTML }}
-            <i class="fa fa-rss-square fa-lg" style="color:black"></i></a>
+            <i class="fa-svg fa-rss-square fa-svg-lg" style="color:black"></i></a>
         {{ end -}}
       </div>
       {{ end }}
