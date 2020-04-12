@@ -16,6 +16,7 @@
       <div>
         {{ .Content }}
       </div>
+
     </article>
 
     {{ if eq .Type "tags" }}
@@ -27,6 +28,7 @@
       </div>
     {{ end }}
 
+    {{ if eq .Type "blog" }}
     <div>
       {{ range .Pages }}
         <article>
@@ -34,6 +36,8 @@
         </article>
       {{ end }}
     </div>
+    {{ end }}
+
   </main>
 
 {{ partial "footer.html" . }}
