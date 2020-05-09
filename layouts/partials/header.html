@@ -22,7 +22,7 @@
     {{ with .Params.Description }}<meta name="twitter:description" content="{{ . }}">{{ end }}
     {{ with .Params.Image }}<meta name="twitter:image" content="{{ . | absURL }}">{{ end }}
     {{ with .Params.ImageAlt }}<meta name="twitter:image:alt" content="{{ . }}">{{ end }}
-    {{ with .Site.Params.twitterAccount }}<meta name="twitter:creator" content="{{ . }}">{{ end }}
+    {{ with .Site.Params.twitterAccount }}<meta name="twitter:creator" content="@{{ . }}">{{ end }}
   {{ end }}
 
   <link rel="preload" as="style" href="{{ relURL "css/style.css" }}">
@@ -37,9 +37,13 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap">
 
-  {{ with .OutputFormats.Get "rss" -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-  {{ end -}}
+  {{ if eq .Type "blog" }}
+    {{ with .Site.GetPage "/blog" }}
+      {{ with .OutputFormats.Get "rss" -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+      {{ end -}}
+    {{ end }}
+  {{ end }}
 
   {{ hugo.Generator }}
 
