@@ -10,11 +10,10 @@
       <i class="fa-svg fa-twitter-square fa-svg-lg" style="color:black"></i></a>
     {{ end }}
   {{end }}
-</div>
 
-{{ if .Params.tags }}
+  {{ if .Params.tags }}
   <h2 class="tags">
     Tags: {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="{{ "/tags/" | relLangURL }}{{ $e | urlize }}">{{ $e }}</a>{{ end }}
   </h2>
-{{ end }}
-
+  {{ end }}
+</div>
