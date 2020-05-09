@@ -3,10 +3,9 @@
   <main>
     <article>
       <h1 class="title">{{ .Title | markdownify }}</h1>
-        {{ if .Params.tags }}
-          <h2 class="tags">
-            Tags: {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="{{ "/tags/" | relLangURL }}{{ $e | urlize }}">{{ $e }}</a>{{ end }}
-          </h2>
+
+        {{ if eq .Type "blog" }}
+          {{ partial "blog.html" . }}
         {{ end }}
 
       {{ partial "toc.html" . }}

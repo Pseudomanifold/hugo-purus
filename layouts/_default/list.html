@@ -5,12 +5,7 @@
       <h1 class="title">{{ .Title }}</h1>
 
       {{ if eq .Type "blog" }}
-      <div>
-        {{ with .OutputFormats.Get "rss" -}}
-            {{ printf `<a href="%s" aria-label="RSS">` .Permalink | safeHTML }}
-            <i class="fa-svg fa-rss-square fa-svg-lg" style="color:black"></i></a>
-        {{ end -}}
-      </div>
+        {{ partial "blog.html" . }}
       {{ end }}
 
       <div>
