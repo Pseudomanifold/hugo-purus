@@ -1,4 +1,10 @@
 <div>
+  {{ if .Params.tags }}
+  <h2 class="tags">
+    Tags: {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="{{ "/tags/" | relLangURL }}{{ $e | urlize }}">{{ $e }}</a>{{ end }}
+  </h2>
+  {{ end }}
+
   {{ with .Site.GetPage "/blog" }}
     {{ with .OutputFormats.Get "rss" }}
         {{ printf `<a href="%s" aria-label="RSS">` .Permalink | safeHTML }}
@@ -10,10 +16,4 @@
       <i class="fa-svg fa-twitter-square fa-svg-lg" style="color:black"></i></a>
     {{ end }}
   {{end }}
-
-  {{ if .Params.tags }}
-  <h2 class="tags">
-    Tags: {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="{{ "/tags/" | relLangURL }}{{ $e | urlize }}">{{ $e }}</a>{{ end }}
-  </h2>
-  {{ end }}
 </div>
