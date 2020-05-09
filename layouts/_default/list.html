@@ -18,12 +18,11 @@
       <div>
         <p>
           It looks like you are trying to navigate this website using tags. Please enjoy this list of all pages
-          tagged &ldquo;{{ .Title | lower }}&rdquo;:
+          tagged &lsquo;{{ .Title | lower }}&rsquo;:
         </p>
       </div>
     {{ end }}
 
-    {{ if eq .Type "blog" }}
     <div>
       {{ range .Pages }}
         <article>
@@ -31,7 +30,6 @@
         </article>
       {{ end }}
     </div>
-    {{ end }}
 
   </main>
 
