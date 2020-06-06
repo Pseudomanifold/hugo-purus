@@ -23,14 +23,15 @@
       </div>
     {{ end }}
 
-    <div>
-      {{ range .Pages }}
-        <article>
-          <a href="{{.Permalink}}">{{.Title | markdownify}}</a> (published on  {{.Date.Format "Monday, January 2, 2006"}})
-        </article>
-      {{ end }}
-    </div>
-
+    {{ if eq .Type "blog" }}
+      <div>
+        {{ range .Pages }}
+          <article>
+            <a href="{{.Permalink}}">{{.Title | markdownify}}</a> (published on  {{.Date.Format "Monday, January 2, 2006"}})
+          </article>
+        {{ end }}
+      </div>
+   {{ end }}
   </main>
 
 {{ partial "footer.html" . }}
