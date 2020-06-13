@@ -23,7 +23,7 @@
       </div>
     {{ end }}
 
-    {{ if eq .Type "blog" }}
+    {{ if or (eq .Type "blog") (eq .Type "tags") }}
       <div>
         {{ range .Pages }}
           <article>
