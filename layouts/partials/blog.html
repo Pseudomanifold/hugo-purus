@@ -16,4 +16,11 @@
       <i class="fa-svg fa-twitter-square fa-svg-lg" style="color:black"></i></a>
     {{ end }}
   {{end }}
+
+  {{ with .PrevInSection }}
+    &laquo; Previous post: <a href="{{ .Permalink }}">{{ .Title | markdownify | truncate 40 }}</a>
+  {{ end }}
+  {{ with .NextInSection }}
+    &mdash; Next post: <a href="{{ .Permalink }}">{{ .Title | markdownify | truncate 40 }}</a> &raquo;
+  {{ end }}
 </div>
