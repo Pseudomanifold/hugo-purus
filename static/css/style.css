@@ -3,6 +3,16 @@ html
   overflow-y: scroll;
 }
 
+a
+{
+  color: #C41E3A;
+}
+
+a:visited
+{
+  color: #808080;
+}
+
 body
 {
   font-family: 'Crimson Text', serif;
