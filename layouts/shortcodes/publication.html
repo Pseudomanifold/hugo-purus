@@ -1,6 +1,7 @@
 <div class="publication">
   {{ $paper := .Get 0 }}
   {{ $data :=  index .Site.Data.publications $paper }}
+  <div class="publication-venue">{{ $data.venue }}</div>
   <div class="publication-title">{{ $data.title | markdownify }}</div>
   <div class="publication-authors">{{ $data.authors | markdownify }}</div>
   <div class="publication-abstract">
@@ -11,10 +12,6 @@
   </div>
 
   <figure class="publication-preview">
-    {{ $width := div 95.0 (len $data.preview) }}
-    <p>{{ $width }}</p>
-    {{ range $data.preview }}
-      <img src="{{ . }}" style="width:{{ $width }}%" />
-    {{ end }}
+      <img src="{{ $data.preview }}" />
   </figure>
 </div>
