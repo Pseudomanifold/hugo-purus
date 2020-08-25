@@ -134,3 +134,32 @@ h2.toc
   padding: 0;
   margin: 0;
 }
+
+div.publication
+{
+  border: 1px solid #E5E5E5;
+  font-size: 0.90rem;
+  box-shadow: 5px 5px 10px 0px #E5E5E5;
+  display: inline-block;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  max-width: 45%;
+}
+
+div.publication-title
+{
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+div.publication-venue
+{
+  float: right;
+}
+
+figure.publication-preview
+{
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
