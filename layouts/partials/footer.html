@@ -1,5 +1,5 @@
 <footer>
-      This page was last updated on <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Page.Date.Format "Monday, January 2, 2006" }}</time>.
+      This page was last updated on <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Monday, January 2, 2006" }}</time>.
       {{ with .Site.Params.footer.text }}{{ . | markdownify }}{{ end }}
 </footer>
 </body>
