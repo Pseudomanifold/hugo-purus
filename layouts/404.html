@@ -1,0 +1,37 @@
+{{ partial "header.html" . }}
+
+	<main>
+    <article>
+      <h1 class="title">{{ .Title | markdownify }}</h1>
+      <div>
+<pre style="all:revert">
+  It's pitch dark, and you can't see a thing.
+
+> i
+
+  Your inventory contains:
+  (1) small torch light
+  (1) set of hyperparameters
+  (2) papers
+  (8) GPUs
+
+> turn torch light on
+
+  The room gets lit a bit. It is approximately 5m x 5m.
+  You can see letters on the wall to your left.
+
+> examine wall
+
+  Somebody wrote on the wall: ERROR 404 - FILE NOT FOUND
+</pre>
+      </div>
+
+      <div>
+        <p>
+        Apologies&mdash;even the most advanced machine learning techniques were unable to find
+        this file. Maybe it does not exist? Please <a href="{{ "/" | relURL }}">return to the homepage</a>
+        or, if you believe this file should exist, <a href="{{ "/about" | relURL }}">contact me</a>.
+        </p>
+      </div>
+    </article>
+  </main>
