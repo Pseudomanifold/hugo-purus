@@ -51,14 +51,3 @@
 </head>
 
 <body>
-  <header>
-    <nav>
-      {{ range $i, $e := .Site.Menus.main }}
-        {{ if $i }}&bull;{{ end }}
-        {{ with .Pre }}
-          <span>{{ . }}</span>
-        {{ end }}
-        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
-      {{ end }}
-    </nav>
-  </header>
