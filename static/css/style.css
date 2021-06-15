@@ -15,7 +15,9 @@ a:visited
 
 body
 {
-  font-family: 'Crimson Text', serif;
+  line-height: 1.5;
+
+  font-family: 'Gentium Book Basic', serif;
   font-size: 1.25em;
   max-width: 960px;
 
