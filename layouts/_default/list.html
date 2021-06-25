@@ -30,6 +30,9 @@
         {{ range .Pages }}
           <article>
             <a href="{{.Permalink}}">{{.Title | markdownify}}</a> (published on  {{.Date.Format "Monday, January 2, 2006"}})
+             {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end
+             }}<a class="tag" href="{{ "/tags/" | relLangURL }}{{
+                             $e | urlize }}">{{ $e }}</a>{{ end }}
           </article>
         {{ end }}
       </div>
