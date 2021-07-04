@@ -5,6 +5,12 @@
   </h2>
   {{ end }}
 
+  {{ if .Date }}
+  <div>
+    Published on <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>
+  </div>
+  {{ end }}
+
   {{ with .Site.GetPage "/blog" }}
     {{ with .OutputFormats.Get "rss" }}
         {{ printf `<a href="%s" aria-label="RSS">` .Permalink | safeHTML }}
