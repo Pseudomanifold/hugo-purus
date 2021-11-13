@@ -174,3 +174,9 @@ sup, sub
   position: relative;
   top: -0.5em;
 }
+
+blockquote
+{
+  border-left: 10px solid #E5E5E5;
+  padding-left: 0.5em;
+}
