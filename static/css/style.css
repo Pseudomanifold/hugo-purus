@@ -180,3 +180,9 @@ blockquote
   border-left: 10px solid #E5E5E5;
   padding-left: 0.5em;
 }
+
+/* Improve spacing between normal list items */
+li
+{
+  margin: 0.50em 0 0 0;
+}
