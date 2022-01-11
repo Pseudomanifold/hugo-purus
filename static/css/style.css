@@ -186,3 +186,18 @@ li
 {
   margin: 0.50em 0 0 0;
 }
+
+/* Make summary element look like a link */
+summary
+{
+  display:         block;
+  text-decoration: underline; 
+  color:           #C41E3A;
+}
+
+/* Ensures that the cursor indicates that we can do something with the
+ * element here */
+details summary
+{
+  cursor: pointer;
+}
