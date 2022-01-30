@@ -35,9 +35,6 @@
   <link rel="stylesheet" href="{{ relURL "css/fontawesome.min.css" }}">
   <link rel="stylesheet" href="{{ relURL "css/academicons.min.css" }}">
 
-  <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic&display=swap">
-
   {{ if eq .Type "blog" }}
     {{ with .Site.GetPage "/blog" }}
       {{ with .OutputFormats.Get "rss" -}}
