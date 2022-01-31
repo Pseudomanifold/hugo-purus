@@ -27,11 +27,20 @@
 
     {{ if or (eq .Type "blog") (eq .Type "tags") }}
       <div>
+        <ul>
         {{ range .Pages }}
           <article>
-            <a href="{{.Permalink}}">{{.Title | markdownify}}</a> (published on  {{.Date.Format "Monday, January 2, 2006"}})
+            <a href="{{.Permalink}}">{{.Title | markdownify}}</a><br />
+            Published on {{.Date.Format "January 2, 2006"}}
+            {{ if .Lastmod.After .Date }}
+              {{ if ne .Lastmod.Day .Date.Day }}
+              (last updated on {{ .Lastmod.Format "January 2, 2006" }})
+              {{ end }}
+            {{ end }}<br />
+            Tags: {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="{{ "/tags/" | relLangURL }}{{ $e | urlize }}">{{ $e }}</a>{{ end }}
           </article>
         {{ end }}
+        </ul>
       </div>
    {{ end }}
   </main>

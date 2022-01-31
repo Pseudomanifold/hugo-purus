@@ -173,8 +173,8 @@ blockquote
   padding-left: 0.5em;
 }
 
-/* Improve spacing between normal list items */
-li
+/* Improve spacing between normal list items and articles */
+article, li
 {
   margin: 0.50em 0 0 0;
 }
