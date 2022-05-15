@@ -178,3 +178,15 @@ article, li
 {
   margin: 0.50em 0 0 0;
 }
+
+/* Render (nested) keyboard shortcuts in a document */
+kbd>kbd {
+  background-color: #F5F5F5;
+  padding:          2px 2px;
+  border:           1px solid #E5E5E5;
+  font-weight:      600;
+  white-space:      nowrap;
+
+  /* nice key shadow effect */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+}
