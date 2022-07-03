@@ -66,6 +66,19 @@ figure.portrait img
   border: 1px solid black;
 }
 
+figure.centred img
+{
+  margin-left:  auto;
+  margin-right: auto;
+  display:      block;
+}
+
+figure.centred figcaption
+{
+  text-align: justify;
+  font-size:  1.0rem;
+}
+
 h1, h2, h3, h4, h5
 {
   font-variant: small-caps;
