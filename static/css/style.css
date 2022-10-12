@@ -93,6 +93,11 @@ figure.centred img
   display:      block;
 }
 
+figure.logo
+{
+  display: inline-block;
+}
+
 figure.centred figcaption
 {
   text-align: justify;
