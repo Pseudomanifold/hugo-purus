@@ -227,6 +227,15 @@ article, li
   margin: 0.50em 0 0 0;
 }
 
+/* Special handling for profile links on the main page. Since we are
+ * styling the list items above, this makes condensing them a little
+ * bit easier */
+.profiles li
+{
+  margin:          0;
+  list-style-type: none;
+}
+
 /* Render (nested) keyboard shortcuts in a document */
 kbd>kbd {
   background-color: #F5F5F5;
