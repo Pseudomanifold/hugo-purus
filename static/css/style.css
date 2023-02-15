@@ -83,6 +83,14 @@ img
   height: auto;
 }
 
+/* Ensure that the portrait integrates nicely with the rest of the text */
+.portrait
+{
+  margin:         0px;
+  padding-top:    1em;
+  padding-bottom: 1em;
+}
+
 figure.portrait img
 {
   border: 1px solid black;
@@ -213,7 +221,7 @@ blockquote
   padding-left: 0.5em;
 }
 
-/* Improve spacing between normal list items and articles */
+/* Improve spacing between articles and normal lists */
 article, li
 {
   margin: 0.50em 0 0 0;
