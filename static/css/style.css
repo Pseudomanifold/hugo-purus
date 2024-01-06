@@ -103,6 +103,12 @@ figure.centred img
   display:      block;
 }
 
+figure.button
+{
+  margin:  0px;
+  display: inline-block;
+}
+
 figure.logo
 {
   display: inline-block;
