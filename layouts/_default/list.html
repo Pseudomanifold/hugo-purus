@@ -25,6 +25,33 @@
       </div>
     {{ end }}
 
+    {{ if eq .Type "blog" }}
+      <h1>Recently updated</h1>
+
+      {{ $posts := where .Site.RegularPages "Section" "eq" "blog" }}
+      {{ $posts := sort $posts ".Params.LastMod" "desc" }}
+      {{ $posts := ($posts | first 5) }}
+
+      <div>
+        <ul>
+          {{ range $posts }}
+            <li>
+              <article>
+                <a href="{{.Permalink}}">{{.Title | markdownify}}</a>
+                {{ if .Lastmod.After .Date }}
+                {{ if ne .Lastmod.Day .Date.Day }}
+                (last updated on {{ .Lastmod.Format "January 2, 2006" }})
+                {{ end }}
+              {{ end }}
+              </article>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <h1>All articles</h1>
+    {{ end }}
+
     {{ if or (eq .Type "blog") (eq .Type "tags") }}
       <div>
         <ul>
