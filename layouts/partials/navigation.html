@@ -1,11 +1,14 @@
 <header>
   <nav>
+    <ul>
     {{ range $i, $e := .Site.Menus.main }}
-      {{ if $i }}&bull;{{ end }}
+      <li>
       {{ with .Pre }}
         <span>{{ . }}</span>
       {{ end }}
-      <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+      </li>
     {{ end }}
+    </ul>
   </nav>
 </header>
