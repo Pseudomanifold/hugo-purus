@@ -66,7 +66,7 @@ nav
   font-size: 1.00em;
 }
 
-nav ul
+#menu ul
 {
   display:        flex;
   flex-direction: row;
@@ -266,7 +266,7 @@ kbd>kbd
 
 @media only screen and (max-width: 690px)
 {
-  nav ul
+  #menu ul
   {
     flex-direction: column;
   }
