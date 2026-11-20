@@ -1,0 +1,48 @@
+{{- /*
+  Renders a list of publications from `data/publications.json`. Used by
+  the `publications` and `publication` shortcodes.
+
+  Parameters (as a dict):
+
+    pubs:   publications to render
+    years:  if true, group by year and show a list of links to years;
+            otherwise, render without bullets (e.g., on the research page)
+*/ -}}
+{{- $groups := slice (dict "year" "" "pubs" .pubs) -}}
+{{- $years := slice -}}
+{{- if .years -}}
+  {{- range .pubs -}}
+    {{- $years = $years | append .year -}}
+  {{- end -}}
+  {{- $years = uniq $years -}}
+  {{- $groups = slice -}}
+  {{- range $years -}}
+    {{- $groups = $groups | append (dict "year" . "pubs" (where $.pubs "year" .)) -}}
+  {{- end -}}
+{{- end }}
+<div class="publications{{ if not .years }} pub-single{{ end }}">
+  {{- with $years }}
+  <nav aria-label="Publication years">
+    <ul class="pub-years">
+    {{- range . }}
+      <li><a href="#{{ . }}">{{ . }}</a></li>
+    {{- end }}
+    </ul>
+  </nav>
+  {{- end }}
+  {{- range $groups }}
+  {{- with .year }}
+  <h2 id="{{ . }}">{{ . }}</h2>
+  {{- end }}
+  <ul>
+  {{- range .pubs }}
+    <li class="pub">
+      {{- with .venue }}
+      <span class="pub-venue">{{ . }}</span>
+      {{- end }}
+      {{ .body | markdownify }}
+    </li>
+  {{- end }}
+  </ul>
+  {{- end }}
+</div>

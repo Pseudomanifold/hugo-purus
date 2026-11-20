@@ -1,0 +1,14 @@
+{{- /*
+  Renders a single publication from `data/publications.json`, formatted
+  as on the publications page.
+
+  Parameters:
+
+    id: BibTeX key of the publication, e.g., "Roell24a"
+*/ -}}
+{{- $id := .Get "id" -}}
+{{- $pubs := where hugo.Data.publications "id" $id -}}
+{{- if not $pubs -}}
+  {{- errorf "publication: no publication with ID %q (%s)" $id .Position -}}
+{{- end }}
+{{ partial "publications.html" (dict "pubs" $pubs) }}
