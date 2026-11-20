@@ -16,11 +16,6 @@
         {{ printf `<a href="%s" aria-label="RSS">` .Permalink | safeHTML }}
         <i class="fa-svg fa-rss-square fa-svg-lg" style="color:black"></i></a>
     {{ end }}
-
-    {{ with .Site.Params.twitterAccount }}
-      <a href="https://twitter.com/{{ . }}" aria-label="Twitter">
-      <i class="fa-svg fa-twitter-square fa-svg-lg" style="color:black"></i></a>
-    {{ end }}
   {{end }}
 
   {{ with .PrevInSection }}
